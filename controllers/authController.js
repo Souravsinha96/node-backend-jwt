@@ -42,7 +42,7 @@ const handleLogin = async (req, res) => {
     });
     //add secure:true in prod https
     console.log('accessToken', accessToken);
-    res.json({ accessToken });
+    res.json({ roles, accessToken });
   } else {
     res.sendStatus(401);
   }
