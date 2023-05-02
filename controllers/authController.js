@@ -34,7 +34,7 @@ const handleLogin = async (req, res) => {
 
     let newRefreshTokenArray = !cookies.jwt
       ? foundUser.refreshToken
-      : foundUser.refreshToken.filter(rt !== cookies.jwt);
+      : foundUser.refreshToken.filter((rt) => rt !== cookies.jwt);
     if (cookies?.jwt) {
       /* 
     Scenario added here: 
