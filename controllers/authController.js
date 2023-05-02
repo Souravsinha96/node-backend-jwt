@@ -43,7 +43,7 @@ const handleLogin = async (req, res) => {
         3) If 1 & 2, reuse detection is needed to clear all RTs when user logs in
     */
       const refreshToken = cookies?.jwt;
-      const foundToken = await foundUser.findOne({ refreshToken }).exec();
+      const foundToken = await User.findOne({ refreshToken }).exec();
       if (!foundToken) {
         console.log('attepted frefersh token at login');
         newRefreshTokenArray = [];
